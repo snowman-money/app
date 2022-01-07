@@ -31,7 +31,7 @@
             app
         >
             <p class="text-subtitle-1 text-center font-weight-bold">
-                Created for Snowmen, for Snowmen <br />(and Snowwomen)
+                Created for Snowmen, by Snowmen <br />(and Snowwomen)
             </p>
         </v-footer>
     </v-app>
