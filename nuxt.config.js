@@ -10,7 +10,7 @@ export default {
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         // titleTemplate: '%s - nft-plus-studio',
-        title: 'Snowman DAO - Claim',
+        title: 'Snowman DAO - Dashboard',
         meta: [
             { charset: 'utf-8' },
             {
@@ -64,7 +64,7 @@ export default {
             },
             {
                 property: 'twitter:title',
-                content: 'Snowman DAO - Claim',
+                content: 'Snowman DAO - Dashboard',
             },
             {
                 property: 'twitter:description',
