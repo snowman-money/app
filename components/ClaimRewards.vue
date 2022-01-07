@@ -16,6 +16,7 @@
                 color="primary"
                 elevation="2"
                 large
+                :loading="isLoading"
                 :disabled="!canClaim"
                 @click.stop="claimButtonClicked"
                 >Claim Rewards</v-btn
@@ -33,17 +34,22 @@ import { Contracts } from '@/constants/contracts';
 @Component
 export default class ClaimRewards extends Vue {
     pendingRewards: string = '';
+    isLoading: boolean = false;
     async claimButtonClicked() {
         const isConnected = await this.$web3.isConnected();
         if (!isConnected) {
             return;
         }
+        const connectedAddress = this.$store.state.wallet.address;
+        this.isLoading = true;
         try {
             await getContract(Contracts.DISTRIBUTOR)
                 .methods.claimDividend()
-                .call();
+                .send({ from: connectedAddress });
             this.pendingRewards = await this.getPendingRewards();
+            this.isLoading = false;
         } catch (error) {
+            this.isLoading = false;
             return null;
         }
     }
