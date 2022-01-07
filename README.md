@@ -1,4 +1,4 @@
-# claim-app
+# SnowmanDAO Claim App
 
 ## Build Setup
 
