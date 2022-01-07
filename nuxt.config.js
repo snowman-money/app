@@ -38,7 +38,7 @@ export default {
             },
             {
                 property: 'og:url',
-                content: 'https://claim.snowman.money',
+                content: 'https://dashboard.snowman.money',
             },
             {
                 property: 'og:title',
@@ -60,7 +60,7 @@ export default {
             },
             {
                 property: 'twitter:url',
-                content: 'https://claim.snowman.money',
+                content: 'https://dashboard.snowman.money',
             },
             {
                 property: 'twitter:title',
