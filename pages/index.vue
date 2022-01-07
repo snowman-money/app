@@ -1,5 +1,15 @@
 <template>
     <div>
+        <v-row
+            class="d-xs-flex d-md-none flex-row px-6 pt-12 pb-3 align-center"
+        >
+            <v-col cols="6">
+                <AddTokens />
+            </v-col>
+            <v-col cols="6">
+                <ConnectWallet />
+            </v-col>
+        </v-row>
         <UserStatGroup />
         <div id="secondary-section" class="px-6 py-12">
             <MarketStatGroup />
@@ -114,24 +124,7 @@ import { Component } from 'vue-property-decorator';
 import { setupNetworkListeners } from '../helpers/web3-helpers';
 
 @Component
-export default class IndexPage extends Vue {
-    handleChainChanged(chainId: number) {
-        this.$store.commit('wallet/setProviderChainId', Number(chainId));
-    }
-
-    handleAccountsChanged(accounts: Array<string>) {
-        if (accounts.length > 0) {
-            this.$store.commit('wallet/setAddress', accounts[0]);
-        }
-    }
-
-    mounted() {
-        // setupNetworkListeners(
-        //     this.handleChainChanged,
-        //     this.handleAccountsChanged
-        // );
-    }
-}
+export default class IndexPage extends Vue {}
 </script>
 
 <style lang="scss" scoped>
@@ -153,6 +146,7 @@ export default class IndexPage extends Vue {
         }
 
         .v-expansion-panel-content {
+            word-wrap: break-word;
             padding-top: 16px;
             background: rgba(131, 190, 201, 0.13) !important;
             border: 0.5px solid #478f9c;

@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex justify-space-around">
+    <div class="d-flex flex-column flex-md-row justify-md-space-around">
         <BasicStat title="market cap" :stat-value="marketCap" currency="$" />
         <BasicStat title="price usd" :stat-value="marketPrice" currency="$" />
         <BasicStat title="liquidity" :stat-value="liquidity" currency="$" />

@@ -1,11 +1,23 @@
 <template>
-    <v-app dark>
-        <v-app-bar color="white" height="97" elevation="0" fixed app>
-            <SnowmanLogo />
-            <v-spacer class=".d-sm-none .d-md-flex" />
-            <div class="d-flex flex-row">
-                <AddTokens class="mr-10" />
-                <ConnectWallet />
+    <v-app dark :class="$vuetify.breakpoint.name">
+        <v-app-bar
+            id="app-bar"
+            color="white"
+            height="97"
+            elevation="0"
+            fixed
+            app
+        >
+            <div
+                class="d-flex flex-md-row flex-column flex-sm-column align-center"
+                style="width: 100%"
+            >
+                <SnowmanLogo />
+                <v-spacer class="d-none d-md-flex" />
+                <div class="d-none d-md-flex">
+                    <AddTokens class="mr-10" />
+                    <ConnectWallet />
+                </div>
             </div>
         </v-app-bar>
         <v-main>
@@ -35,3 +47,17 @@ export default {
     },
 };
 </script>
+
+<style lang="scss" scoped>
+// .xs,
+// .sm {
+//     #app-bar {
+//         background: red !important;
+//         height: 200px !important;
+//     }
+//     .v-toolbar__content {
+//         background: red !important;
+//         height: 200px !important;
+//     }
+// }
+</style>
